@@ -194,7 +194,7 @@ def delete_address(request,id):
 def checkout(request):
     cart_items =Cart.objects.filter(user=request.user)
     total=0
-    delhivery_charge=1000
+    delhivery_charge=2000
     for item in cart_items:
         item.product.price_and_quantity_total = item.product.discounted_price * item.quantity
         total+=(item.product.discounted_price*item.quantity)
